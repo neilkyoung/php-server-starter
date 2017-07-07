@@ -1,0 +1,21 @@
+{
+  "name": "php-server-starter",
+  "description": "php server starter",
+  "main": "gulpfile.js",
+  "authors": [
+    "Neil Young <neil.young2010@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/neilkyoung/php-server-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
