@@ -64,7 +64,7 @@ function lint(files) {
 }
 
 gulp.task('lint', () => {
-    return lint('scr/scripts/**/*.js')
+    return lint('src/js/**/*.js')
         .pipe(gulp.dest('src/scripts'));
 })
 
@@ -134,41 +134,6 @@ gulp.task('php-serve', () => {
 
     gulp.watch('src/css/**/*.scss', ['styles']);
     gulp.watch('src/js/**/*.js', ['scripts']);
-});
-
-gulp.task('serve', () => {
-    runSequence(['clean'], ['styles', 'scripts'], () => {
-        browserSync.init({
-            notify: false,
-            port: port,
-            server: {
-                baseDir: ['.tmp', 'src'],
-                ui: false,
-                routes: {
-                    '/bower_components': 'bower_components'
-                }
-            }
-        });
-    });
-
-    gulp.watch([
-        'src/*.html',
-        'src/js/**/*.js'
-    ]).on('change', reload);
-
-    gulp.watch('src/css/**/*.scss', ['styles']);
-    gulp.watch('src/js/**/*.js', ['scripts']);
-
-})
-
-gulp.task('serve:dist', ['default'], () => {
-    browserSync.init({
-        notify: false,
-        port: port,
-        server: {
-            baseDir: ['dist']
-        }
-    });
 });
 
 gulp.task('php-serve:dist', ['default'], () => {
